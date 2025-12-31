@@ -1,16 +1,44 @@
 ---
-
+import Navbar from "../components/Navbar.astro";
+import HeroSection from "../components/HeroSection.astro";
+import Marquee from "../components/Marquee.astro";
+import ProblemSection from "../components/ProblemSection.astro";
+import FeaturesGrid from "../components/FeaturesGrid.astro";
+import LanguagesSection from "../components/LanguagesSection.astro";
+import PricingSection from "../components/PricingSection.astro";
+import SocialProof from "../components/SocialProof.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
+<html lang="en" class="light">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>LingoDrip - Stop Rotting. Start Dripping.</title>
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-mint-white font-body text-panda-black overflow-x-hidden">
+		<Navbar />
+		<HeroSection />
+		<Marquee />
+		<ProblemSection />
+		<FeaturesGrid />
+		<LanguagesSection />
+		<PricingSection />
+		<SocialProof />
+		<Footer />
 	</body>
 </html>
