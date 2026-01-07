@@ -22,89 +22,82 @@
     <div
       class="flex flex-wrap justify-center gap-6 md:gap-8 max-w-[1000px] mx-auto"
     >
-      <!-- Spanish -->
-      <button
-        class="group hover:-translate-y-2 transition-transform duration-200"
-      >
-        <div
-          class="bg-[#F0FDF4] border-2 border-[#052e16] rounded-full px-8 py-4 shadow-[4px_4px_0px_#052e16] flex items-center gap-3"
-        >
-          <span class="text-2xl">🇪🇸</span>
-          <span class="font-body font-semibold text-lg text-[#052e16]"
-            >Spanish</span
+      {
+        [
+          {
+            code: "us",
+            emoji: "🇺🇸",
+            label: "English",
+            status: "available",
+            rotate: "rotate-2",
+          },
+          {
+            code: "cn",
+            emoji: "🇨🇳",
+            label: "Chinese",
+            status: "available",
+            rotate: "-rotate-1",
+          },
+          {
+            code: "es",
+            emoji: "🇪🇸",
+            label: "Spanish",
+            status: "soon",
+            rotate: "rotate-1",
+          },
+          {
+            code: "kr",
+            emoji: "🇰🇷",
+            label: "Korean",
+            status: "soon",
+            rotate: "-rotate-2",
+          },
+          {
+            code: "jp",
+            emoji: "🇯🇵",
+            label: "Japanese",
+            status: "soon",
+            rotate: "rotate-3",
+          },
+          {
+            code: "fr",
+            emoji: "🇫🇷",
+            label: "French",
+            status: "soon",
+            rotate: "-rotate-1",
+          },
+          {
+            code: "de",
+            emoji: "🇩🇪",
+            label: "German",
+            status: "soon",
+            rotate: "rotate-2",
+          },
+        ].map((lang) => (
+          <button
+            class:list={[
+              "group transition-transform duration-200 w-[45%] sm:w-auto",
+              lang.status === "available"
+                ? "hover:-translate-y-2 cursor-pointer"
+                : "cursor-not-allowed opacity-80",
+            ]}
           >
-        </div>
-      </button>
-
-      <!-- Korean -->
-      <button
-        class="group hover:-translate-y-2 transition-transform duration-200"
-      >
-        <div
-          class="bg-[#F0FDF4] border-2 border-[#052e16] rounded-full px-8 py-4 shadow-[4px_4px_0px_#052e16] flex items-center gap-3 rotate-2"
-        >
-          <span class="text-2xl">🇰🇷</span>
-          <span class="font-body font-semibold text-lg text-[#052e16]"
-            >Korean</span
-          >
-        </div>
-      </button>
-
-      <!-- Japanese -->
-      <button
-        class="group hover:-translate-y-2 transition-transform duration-200"
-      >
-        <div
-          class="bg-[#F0FDF4] border-2 border-[#052e16] rounded-full px-8 py-4 shadow-[4px_4px_0px_#052e16] flex items-center gap-3 -rotate-1"
-        >
-          <span class="text-2xl">🇯🇵</span>
-          <span class="font-body font-semibold text-lg text-[#052e16]"
-            >Japanese</span
-          >
-        </div>
-      </button>
-
-      <!-- Mandarin -->
-      <button
-        class="group hover:-translate-y-2 transition-transform duration-200"
-      >
-        <div
-          class="bg-[#F0FDF4] border-2 border-[#052e16] rounded-full px-8 py-4 shadow-[4px_4px_0px_#052e16] flex items-center gap-3 rotate-3"
-        >
-          <span class="text-2xl">🇨🇳</span>
-          <span class="font-body font-semibold text-lg text-[#052e16]"
-            >Mandarin</span
-          >
-        </div>
-      </button>
-
-      <!-- French -->
-      <button
-        class="group hover:-translate-y-2 transition-transform duration-200"
-      >
-        <div
-          class="bg-[#F0FDF4] border-2 border-[#052e16] rounded-full px-8 py-4 shadow-[4px_4px_0px_#052e16] flex items-center gap-3 -rotate-2"
-        >
-          <span class="text-2xl">🇫🇷</span>
-          <span class="font-body font-semibold text-lg text-[#052e16]"
-            >French</span
-          >
-        </div>
-      </button>
-
-      <!-- German -->
-      <button
-        class="group hover:-translate-y-2 transition-transform duration-200"
-      >
-        <div
-          class="bg-[#F0FDF4] border-2 border-[#052e16] rounded-full px-8 py-4 shadow-[4px_4px_0px_#052e16] flex items-center gap-3"
-        >
-          <span class="text-2xl">🇩🇪</span>
-          <span class="font-body font-semibold text-lg text-[#052e16]"
-            >German</span
-          >
-        </div>
-      </button>
+            <div
+              class:list={[
+                "bg-[#F0FDF4] border-2 border-[#052e16] rounded-full px-8 py-4 shadow-[4px_4px_0px_#052e16] flex items-center gap-3",
+                lang.rotate,
+              ]}
+            >
+              <span class="text-2xl">{lang.emoji}</span>
+              <div class="flex flex-col items-start">
+                <span class="font-body font-semibold text-lg text-[#052e16] leading-none">
+                  {lang.label}
+                </span>
+              </div>
+            </div>
+          </button>
+        ))
+      }
 
       <div
         class="px-8 py-4 text-[#052e16]/50 font-body font-bold text-sm uppercase tracking-wider flex items-center"
